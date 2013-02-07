@@ -1,0 +1,10 @@
+<%= error_messages_for 'periodic_task' %>
+<div class="box tabular">
+  <p><%= f.text_field :subject, :required => true, :size => 60 %></p>
+  <p><%= f.select :tracker_id, @project.trackers.collect {|t| [t.name, t.id]}, :required => true %></p>
+  <p><%= f.select :fixed_version_id, version_options_for_select(@project.shared_versions.open, f.object.fixed_version), :include_blank => true, :required => f.object.budget_active? %></p>
+  <p><%= f.select :assigned_to_id, principals_options_for_select(@project.assignable_users, f.object.assigned_to), :include_blank => true %></p>
+  <p><%= f.text_field :interval_number, :required=> true, :size => 3 %> </p>
+  <p><%= f.select :interval_units, PeriodicTask::INTERVAL_UNITS.collect {|u| [l(:"periodic_task_#{u}"), u]} %></p>
+  <p><%= f.text_field :next_run_date %><%= calendar_for('periodic_task_next_run_date') %></p>
+</div>

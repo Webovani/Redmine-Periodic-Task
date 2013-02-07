@@ -1,9 +1,20 @@
-# English strings go here for Rails i18n
 en:
-  field_interval_number: Interval Number
-  field_next_run_date: Next run date (yyyy-mm-dd hh:mm:ss)
+  field_interval_number: Interval
+  field_interval_units: Interval unit
+  field_next_run_date: Next run date
 
-  label_assigned_to_user: Assigned to user
-  no_members_in_project: This project has no members
-  label_subject: Subject
-  label_next_run_date: Next Run Date 
+  project_module_periodic_tasks: Periodic tasks
+  permission_periodic_tasks: Manage periodic tasks
+  periodic_tasks: Periodic tasks
+
+  periodic_task_add: Add periodic task
+  periodic_task_edit: Edit periodic task
+  periodic_task_new: New periodic task
+  periodic_task_created: New periodic task was created successfully.
+  periodic_task_updated: Periodic task was updated successfully.
+  periodic_task_deleted: Periodic task was deleted successfully.
+
+  periodic_task_day: day(s)
+  periodic_task_week: week(s)
+  periodic_task_month: month(s)
+

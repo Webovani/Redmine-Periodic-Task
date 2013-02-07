@@ -1,0 +1,45 @@
+<div class="contextual">
+  <%= link_to(l(:periodic_task_add), {:action => 'new'},
+              :class => 'icon icon-add',
+              :onclick => 'Element.show("add-task"); Form.Element.focus("periodic_task_subject"); return false;') %>
+</div>
+<h2><%= l(:periodic_tasks) %></h2>
+
+<div id="add-task" style="display:none;">
+  <h3><%= l(:periodic_task_new) %></h3>
+  <% labelled_tabular_form_for [@project, @periodic_task] do |f| %>
+    <%= render :partial => 'form', :locals => { :f => f } %>
+    <%= submit_tag l(:button_create) %>
+    <%= link_to l(:button_cancel), "#", :onclick => 'Element.hide("add-task")' %>
+  <% end %>
+</div>
+
+<p>&nbsp;</p>
+
+<% if @periodic_tasks.empty? %>
+  <p class="nodata"><%= l(:label_no_data) %></p>
+<% else %>
+  <table class="list">
+    <thead>
+      <tr>
+        <th><%= l(:field_subject) %></th><th><%= l(:field_next_run_date) %></th><th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @periodic_tasks.each do |task| %>
+        <tr class="<%= cycle('odd', 'even') %>">
+          <td><%= task.subject %></td>
+          <td><%= task.next_run_date %></td>
+          <td>
+            <%= link_to l(:button_edit),
+                        { :action => 'edit', :id => task },
+                        :class => 'icon icon-edit',
+                        :accesskey => accesskey(:edit),
+                        :onclick => 'Element.show("edit-task"); return false;' %>
+            <%= link_to l(:button_delete), { :action => 'destroy', :id => task.id }, :confirm => l(:text_are_you_sure), :method => :delete, :class => 'icon icon-del' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

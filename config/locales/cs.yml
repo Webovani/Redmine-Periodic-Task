@@ -1,0 +1,20 @@
+cs:
+  field_interval_number: Interval
+  field_interval_units: Jednotka intervalu
+  field_next_run_date: Datum příštího spuštění
+
+  project_module_periodic_tasks: Pravidelné úkoly
+  permission_periodic_tasks: Spravovat pravidelné úkoly
+  periodic_tasks: Pravidelné úkoly
+
+  periodic_task_add: Přidat pravidelný úkol
+  periodic_task_edit: Upravit pravidelný úkol
+  periodic_task_new: Nový pravidelný úkol
+  periodic_task_created: Nový pravidelný úkol byl úspěšně vytvořen.
+  periodic_task_updated: Pravidelný úkol byl úspěšně upraven.
+  periodic_task_deleted: Pravidelný úkol byl úspěšně smazán.
+
+  periodic_task_day: dny
+  periodic_task_week: týdny
+  periodic_task_month: měsíce
+

@@ -1,0 +1,5 @@
+<h2><%= l(:periodic_task_new) %></h2>
+<% labelled_tabular_form_for [@project, @periodic_task] do |f| %>
+  <%= render 'form', :f => f %>
+  <%= submit_tag l(:button_create) %>
+<% end %>
